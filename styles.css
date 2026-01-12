@@ -537,6 +537,31 @@ footer {
     --section-padding: 40px;
   }
 
+  header {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logo-placeholder {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .site-title {
+    font-size: 16px;
+  }
+
+  nav ul.nav-menu {
+    gap: 0.75rem;
+  }
+
+  nav ul.nav-menu li a {
+    font-size: 14px;
+  }
+
   .hero-content h1 {
     font-size: 28px;
   }
@@ -565,6 +590,40 @@ footer {
 
   .price-table td:last-child {
     font-size: 16px;
+  }
+}
+
+/* Очень узкие экраны (Telegram Mini App) */
+@media (max-width: 375px) {
+  header {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .logo {
+    gap: 0.4rem;
+  }
+
+  .logo-placeholder {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+
+  .site-title {
+    font-size: 14px;
+  }
+
+  nav ul.nav-menu li a {
+    font-size: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .image-placeholder {
+    padding: 30px;
+    font-size: 16px;
+    min-height: 200px;
   }
 }
 
