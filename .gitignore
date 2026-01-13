@@ -1,0 +1,103 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary Files
+*.tmp
+*.temp
+tmpclaude-*
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node Modules (if you decide to use npm/build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build Output (if using Tailwind CLI or other build tools)
+dist/
+build/
+output.css
+*.css.map
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Local Configuration
+config.local.js
+secrets.js
+
+# Backup Files
+*.bak
+*.backup
+*-backup.*
+
+# Test Files
+coverage/
+.nyc_output/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Images (uncomment if you don't want to track images in git)
+# images/
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.webp
+# *.svg
+
+# Documentation drafts
+drafts/
+notes.txt
+TODO.txt
+
+# API Keys (IMPORTANT: Never commit these!)
+*-api-key.txt
+credentials.json
+keys.json
