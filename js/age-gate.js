@@ -1,6 +1,29 @@
 // Age Gate Logic
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('themeToggleAge');
+    const themeIcon = themeToggle.querySelector('.theme-toggle-icon');
+
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
     const confirmBtn = document.getElementById('confirmAge');
     const rejectBtn = document.getElementById('rejectAge');
     const ageGateContent = document.querySelector('.age-gate-content');

@@ -9,6 +9,50 @@
     }
 })();
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.querySelector('.theme-toggle-icon');
+const themeText = document.querySelector('.theme-toggle-text');
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+    themeIcon.textContent = '🌙';
+    themeText.textContent = 'Тёмная';
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+
+    if (document.body.classList.contains('light-theme')) {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Тёмная';
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Светлая';
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+// Hamburger Menu Functionality
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
 // Apple-Style Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

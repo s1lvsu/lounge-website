@@ -1,13 +1,33 @@
-/* Age Gate Page Styles */
+/* Age Gate Page Styles with Dark Theme */
 
 :root {
+    --primary-color: #0A84FF;
+    --danger-color: #ff453a;
+
+    /* Dark Theme (Default) */
+    --text-dark: #f5f5f7;
+    --text-gray: #a1a1a6;
+    --bg-dark: #000000;
+    --bg-darker: #1c1c1e;
+    --bg-card: #2c2c2e;
+    --white: #ffffff;
+    --shadow: 0 2px 16px rgba(0,0,0,0.5);
+    --border-color: #38383a;
+    --warning-bg: rgba(255, 214, 10, 0.15);
+    --warning-border: #ffd60a;
+}
+
+/* Light Theme */
+body.light-theme {
     --primary-color: #007AFF;
     --danger-color: #ff3b30;
     --text-dark: #1d1d1f;
     --text-gray: #6e6e73;
-    --bg-light: #fbfbfd;
-    --white: #ffffff;
+    --bg-dark: #ffffff;
+    --bg-darker: #fbfbfd;
+    --bg-card: #ffffff;
     --shadow: 0 2px 16px rgba(0,0,0,0.08);
+    --border-color: #e5e5e7;
     --warning-bg: #fff3cd;
     --warning-border: #ffc107;
 }
@@ -22,12 +42,45 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-dark);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+body.light-theme {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Theme Toggle for Age Gate */
+.theme-toggle-age {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+.theme-toggle-age:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1) rotate(15deg);
 }
 
 .age-gate-container {
@@ -36,7 +89,8 @@ body {
 }
 
 .age-gate-content {
-    background: var(--white);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 24px;
     padding: 48px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -49,9 +103,9 @@ body {
     color: var(--primary-color);
     margin-bottom: 32px;
     padding: 24px;
-    background: var(--bg-light);
+    background: var(--bg-darker);
     border-radius: 16px;
-    border: 2px dashed var(--text-gray);
+    border: 2px dashed var(--border-color);
 }
 
 h1 {
@@ -128,9 +182,9 @@ h1 {
 }
 
 .btn-reject {
-    background: var(--bg-light);
+    background: var(--bg-darker);
     color: var(--text-gray);
-    border: 2px solid var(--text-gray);
+    border: 2px solid var(--border-color);
 }
 
 .btn-reject:hover {
@@ -140,7 +194,8 @@ h1 {
 }
 
 .legal-info {
-    background: var(--bg-light);
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 24px;
@@ -161,7 +216,8 @@ h1 {
 
 .disclaimer {
     padding: 16px;
-    background: var(--bg-light);
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
 }
 
@@ -173,6 +229,18 @@ h1 {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .theme-toggle-age {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
     .age-gate-content {
         padding: 32px 24px;
     }
@@ -194,6 +262,48 @@ h1 {
     .logo-placeholder {
         font-size: 22px;
         padding: 20px;
+    }
+
+    .warning-box {
+        padding: 20px;
+    }
+
+    .warning-icon {
+        font-size: 40px;
+    }
+
+    .legal-info {
+        padding: 16px;
+    }
+
+    .legal-info p {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .age-gate-content {
+        padding: 24px 16px;
+    }
+
+    .theme-toggle-age {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .age-question {
+        font-size: 18px;
+    }
+
+    .logo-placeholder {
+        font-size: 20px;
+        padding: 16px;
     }
 }
 
