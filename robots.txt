@@ -1,0 +1,26 @@
+# Robots.txt для кальянной [НАЗВАНИЕ]
+# https://YOUR_DOMAIN.ru/
+
+User-agent: *
+Allow: /
+
+# Карта сайта
+Sitemap: https://YOUR_DOMAIN.ru/sitemap.xml
+
+# Разрешаем всем поисковикам
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Mail.RU_Bot
+Allow: /
+
+# Блокируем служебные папки (если появятся)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Хост (для Яндекса)
+Host: https://YOUR_DOMAIN.ru
